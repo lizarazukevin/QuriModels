@@ -1,9 +1,10 @@
 $version: "2"
 
-namespace quri.operations.bill
+namespace com.quri.operations.bills
 
-use quri.bill#BillId
+use com.quri.models.bills#BillId
 
+@http(method: "DELETE", uri: "/bills/{billId}")
 operation DeleteBill {
     input: DeleteBillInput
     output: DeleteBillOutput
@@ -11,6 +12,7 @@ operation DeleteBill {
 
 structure DeleteBillInput {
     @required
+    @httpLabel
     billId: BillId
 }
 

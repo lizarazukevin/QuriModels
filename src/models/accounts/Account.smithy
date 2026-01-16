@@ -1,6 +1,6 @@
 $version: "2"
 
-namespace quri.account
+namespace com.quri.models.accounts
 
 /// TODO: Add more demographic inputs (gender, race, ethnicity, DOB, location)
 /// Preferably in a Profile model

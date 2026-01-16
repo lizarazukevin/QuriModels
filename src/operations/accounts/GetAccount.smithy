@@ -1,10 +1,12 @@
 $version: "2"
 
-namespace quri.operations.account
+namespace com.quri.operations.account
 
-use quri.account#Account
-use quri.account#AccountId
+use com.quri.models.accounts#Account
+use com.quri.models.accounts#AccountId
 
+@readonly
+@http(method: "GET", uri: "/accounts/{accountId}")
 operation GetAccount {
     input: GetAccountInput
     output: GetAccountOutput
@@ -12,6 +14,7 @@ operation GetAccount {
 
 structure GetAccountInput {
     @required
+    @httpLabel
     accountId: AccountId
 }
 

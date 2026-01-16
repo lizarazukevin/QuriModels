@@ -9,6 +9,7 @@ repositories {
 
 dependencies {
     implementation 'software.amazon.smithy:smithy-model:1.49.0'
-}
+    implementation 'software.amazon.smithy:smithy-openapi:1.49.0'
+    implementation 'software.amazon.smithy.typescript:smithy-aws-typescript-codegen:0.41.1'}
 
 sourceSets.main.java.srcDirs = ['src']

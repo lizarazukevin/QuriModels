@@ -1,15 +1,19 @@
 $version: "2"
 
-namespace quri
+namespace com.quri
 
-use quri.operations#GetBill
-use quri.operations.account#CreateAccount
-use quri.operations.account#DeleteAccount
-use quri.operations.account#GetAccount
-use quri.operations.bill#CreateBill
-use quri.operations.bill#DeleteBill
+use aws.protocols#restJson1
+use com.quri.operations.account#DeleteAccount
+use com.quri.operations.account#GetAccount
+use com.quri.operations.account#ListAccounts
+use com.quri.operations.accounts#CreateAccount
+use com.quri.operations.bills#CreateBill
+use com.quri.operations.bills#DeleteBill
+use com.quri.operations.bills#GetBill
+use com.quri.operations.bills#ListBills
 
-service QuriService {
+@restJson1
+service Quri {
     version: "2024-01-01"
     operations: [
         CreateAccount
@@ -18,5 +22,7 @@ service QuriService {
         DeleteBill
         GetAccount
         GetBill
+        ListAccounts
+        ListBills
     ]
 }

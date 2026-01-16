@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "outputDirectory": "build/output",
+  "sources": [
+    "src"
+  ],
+  "plugins": {
+    "openapi": {
+      "service": "com.quri#Quri",
+      "jsonContentType": "application/x-amz-json-1.1",
+      "defaultBlobFormat": "binary",
+      "disableCloudFormationSubstitution": true,
+      "apiGatewayType": "REST"
+    },
+    "typescript-codegen": {
+      "service": "com.quri#Quri",
+      "package": "ts-client",
+      "packageVersion": "0.0.1",
+      "packageJson": {
+        "license": "Apache-2.0"
+      },
+      "generateIndexTests": true,
+      "createDefaultReadme": true
+    }
+  }
+}

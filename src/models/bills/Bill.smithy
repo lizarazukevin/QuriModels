@@ -1,8 +1,8 @@
 $version: "2"
 
-namespace quri.bill
+namespace com.quri.models.bills
 
-use quri.money#MonetaryAmount
+use com.quri.models.money#MonetaryAmount
 
 structure Bill {
     @required

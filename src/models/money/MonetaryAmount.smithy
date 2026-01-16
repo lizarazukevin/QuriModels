@@ -1,6 +1,6 @@
 $version: "2"
 
-namespace quri.money
+namespace com.quri.models.money
 
 structure MonetaryAmount {
     @required

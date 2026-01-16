@@ -1,11 +1,12 @@
 $version: "2"
 
-namespace quri.operations.account
+namespace com.quri.operations.accounts
 
-use quri.account#Account
-use quri.account#EmailAddress
-use quri.account#PhoneNumber
+use com.quri.models.accounts#Account
+use com.quri.models.accounts#EmailAddress
+use com.quri.models.accounts#PhoneNumber
 
+@http(method: "POST", uri: "/accounts")
 operation CreateAccount {
     input: CreateAccountInput
     output: CreateAccountOutput

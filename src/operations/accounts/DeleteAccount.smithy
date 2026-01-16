@@ -1,9 +1,10 @@
 $version: "2"
 
-namespace quri.operations.account
+namespace com.quri.operations.account
 
-use quri.account#AccountId
+use com.quri.models.accounts#AccountId
 
+@http(method: "DELETE", uri: "/accounts/{accountId}")
 operation DeleteAccount {
     input: DeleteAccountInput
     output: DeleteAccountOutput
@@ -11,6 +12,7 @@ operation DeleteAccount {
 
 structure DeleteAccountInput {
     @required
+    @httpLabel
     accountId: AccountId
 }
 

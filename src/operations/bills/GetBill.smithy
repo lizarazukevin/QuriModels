@@ -1,10 +1,12 @@
 $version: "2"
 
-namespace quri.operations
+namespace com.quri.operations.bills
 
-use quri.bill#Bill
-use quri.bill#BillId
+use com.quri.models.bills#Bill
+use com.quri.models.bills#BillId
 
+@readonly
+@http(method: "GET", uri: "/bills/{billId}")
 operation GetBill {
     input: GetBillInput
     output: GetBillOutput
@@ -12,6 +14,7 @@ operation GetBill {
 
 structure GetBillInput {
     @required
+    @httpLabel
     billId: BillId
 }
 

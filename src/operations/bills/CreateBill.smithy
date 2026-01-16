@@ -1,10 +1,11 @@
 $version: "2"
 
-namespace quri.operations.bill
+namespace com.quri.operations.bills
 
-use quri.bill#Bill
-use quri.money#MonetaryAmount
+use com.quri.models.bills#Bill
+use com.quri.models.money#MonetaryAmount
 
+@http(method: "POST", uri: "/bills")
 operation CreateBill {
     input: CreateBillInput
     output: CreateBillOutput
