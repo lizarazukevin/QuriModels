@@ -1,46 +1,36 @@
-/// https://smithy.io/2.0/languages/java/client/generating-clients.html
-
 plugins {
-    `java-library`
+    kotlin("jvm") version "2.2.20"
     id("software.amazon.smithy.gradle.smithy-base") version "1.3.0"
-}
-
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
 }
 
 group = "com.quri"
 version = "0.1.0"
+description = "Data models for Quri service."
+
+// Required to parse smithy files for Intellij plugin
+java.sourceSets["main"].java {
+    srcDirs("model", "src/main/smithy")
+}
+
+kotlin {
+    jvmToolchain(21)
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    // Adds codegen plugins and functionality to smithy build classpath
-    smithyBuild("software.amazon.smithy.java:client-codegen:0.0.3")
-    smithyBuild("software.amazon.smithy.java:client-core:0.0.3")
-    implementation("software.amazon.smithy:smithy-model:1.49.0")
-    implementation("software.amazon.smithy:smithy-openapi:1.49.0")
-    implementation("software.amazon.smithy.typescript:smithy-aws-typescript-codegen:0.41.1")
-    implementation("software.amazon.smithy.java:plugins:0.0.3")
+    smithyBuild(libs.smithy.java.server.codegen)
+
+    implementation(libs.smithy.java.plugins)
+    implementation(libs.smithy.java.server.core)
+    implementation(libs.smithy.smithy.model)
+    implementation(libs.smithy.smithy.openapi)
 }
 
-java.sourceSets["main"].java {
-    srcDirs("model", "src/main/smithy")
-}
-
-afterEvaluate {
-    val clientPath = smithy.getPluginProjectionPath(smithy.sourceProjection.get(), "java-client-codegen")
-    sourceSets {
-        main {
-            java {
-                srcDir(clientPath)
-            }
-        }
-    }
+tasks.named("compileKotlin") {
+    dependsOn("smithyBuild")
 }
 
 tasks.named("compileJava") {

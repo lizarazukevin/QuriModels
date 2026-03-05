@@ -1,12 +1,11 @@
 $version: "2"
 
-namespace com.quri.models.accounts
+namespace com.quri.models.profiles
 
 /// TODO: Add more demographic inputs (gender, race, ethnicity, DOB, location)
 /// Preferably in a Profile model
-structure Account {
-    @required
-    accountId: AccountId
+structure Profile {
+    profileId: ProfileId
 
     @required
     username: String
@@ -23,7 +22,7 @@ structure Account {
     phoneNumber: PhoneNumber
 }
 
-string AccountId
+string ProfileId
 
 string EmailAddress
 

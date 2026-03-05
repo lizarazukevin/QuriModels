@@ -5,9 +5,9 @@
     "src/main/smithy"
   ],
   "plugins": {
-    "java-client-codegen": {
+    "java-server-codegen": {
       "service": "com.quri#Quri",
-      "namespace": "com.quri",
+      "namespace": "com.quri.server",
       "headerFile": "license.txt"
     },
     "openapi": {
@@ -16,16 +16,6 @@
       "defaultBlobFormat": "binary",
       "disableCloudFormationSubstitution": true,
       "apiGatewayType": "REST"
-    },
-    "typescript-codegen": {
-      "service": "com.quri#Quri",
-      "package": "ts-client",
-      "packageVersion": "0.0.1",
-      "packageJson": {
-        "license": "Apache-2.0"
-      },
-      "generateIndexTests": true,
-      "createDefaultReadme": true
     }
   }
 }
