@@ -6,7 +6,7 @@ use com.quri.models.money#MonetaryAmount
 
 structure Bill {
     @required
-    billId: BillId
+    billId: BillMongoId
 
     @required
     total: MonetaryAmount
@@ -15,6 +15,9 @@ structure Bill {
     balance: MonetaryAmount
 
     createdAt: Timestamp
+
+    updatedAt: Timestamp
 }
 
-string BillId
+@pattern("^[a-f0-9]{24}$")
+string BillMongoId

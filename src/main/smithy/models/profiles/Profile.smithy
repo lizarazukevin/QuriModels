@@ -5,7 +5,8 @@ namespace com.quri.models.profiles
 /// TODO: Add more demographic inputs (gender, race, ethnicity, DOB, location)
 /// Preferably in a Profile model
 structure Profile {
-    profileId: ProfileId
+    @required
+    profileId: ProfileMongoId
 
     @required
     username: String
@@ -20,9 +21,14 @@ structure Profile {
     email: EmailAddress
 
     phoneNumber: PhoneNumber
+
+    createdAt: Timestamp
+
+    updatedAt: Timestamp
 }
 
-string ProfileId
+@pattern("^[a-f0-9]{24}$")
+string ProfileMongoId
 
 string EmailAddress
 

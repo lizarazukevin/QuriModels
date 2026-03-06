@@ -37,7 +37,6 @@ tasks.named("compileJava") {
     dependsOn("smithyBuild")
 }
 
-
 afterEvaluate {
     val serverPath = smithy.getPluginProjectionPath(smithy.sourceProjection.get(), "java-server-codegen")
     sourceSets.main.get().java.srcDir(serverPath)
