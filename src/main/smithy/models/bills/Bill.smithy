@@ -4,7 +4,7 @@ namespace com.quri.models.bills
 
 use com.quri.models.money#MonetaryAmount
 
-/// Represents a bill issued to a customer, tracking the total amount owed
+/// Represents a bill item, tracking the total amount owed
 /// and the remaining balance to be paid.
 structure Bill {
     /// The unique identifier for this bill, stored as a MongoDB ObjectId.
