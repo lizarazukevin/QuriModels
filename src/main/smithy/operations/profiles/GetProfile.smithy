@@ -16,12 +16,14 @@ operation GetProfile {
     ]
 }
 
+@input
 structure GetProfileInput {
     @required
     @httpLabel
     profileId: ProfileMongoId
 }
 
+@output
 structure GetProfileOutput {
     profile: Profile
 }

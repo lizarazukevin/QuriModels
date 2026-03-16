@@ -6,16 +6,16 @@ namespace com.quri.models.profiles
 /// Preferably in a Profile model
 structure Profile {
     @required
-    profileId: ProfileMongoId
+    id: ProfileMongoId
 
     @required
     username: String
 
     @required
-    firstName: String
+    firstName: FirstName
 
     @required
-    lastName: String
+    lastName: LastName
 
     @required
     email: EmailAddress
@@ -30,6 +30,15 @@ structure Profile {
 @pattern("^[a-f0-9]{24}$")
 string ProfileMongoId
 
+@sensitive
+@pattern("^[\\w.+-]+@[\\w-]+\\.[\\w.]+$")
 string EmailAddress
 
+@sensitive
 string PhoneNumber
+
+@sensitive
+string FirstName
+
+@sensitive
+string LastName

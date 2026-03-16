@@ -6,7 +6,7 @@ use com.quri.models.money#MonetaryAmount
 
 structure Bill {
     @required
-    billId: BillMongoId
+    id: BillMongoId
 
     @required
     total: MonetaryAmount

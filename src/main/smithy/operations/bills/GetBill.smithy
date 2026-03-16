@@ -16,12 +16,14 @@ operation GetBill {
     ]
 }
 
+@input
 structure GetBillInput {
     @required
     @httpLabel
     billId: BillMongoId
 }
 
+@output
 structure GetBillOutput {
     bill: Bill
 }

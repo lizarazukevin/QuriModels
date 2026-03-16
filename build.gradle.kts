@@ -25,6 +25,7 @@ dependencies {
 
     implementation(libs.smithy.java.plugins)
     implementation(libs.smithy.java.server.core)
+    implementation(libs.smithy.smithy.linters)
     implementation(libs.smithy.smithy.model)
     implementation(libs.smithy.smithy.openapi)
 }

@@ -15,12 +15,14 @@ operation CreateBill {
     ]
 }
 
+@input
 structure CreateBillInput {
     total: MonetaryAmount
     balance: MonetaryAmount
     createdAt: Timestamp
 }
 
+@output
 structure CreateBillOutput {
     bill: Bill
 }
