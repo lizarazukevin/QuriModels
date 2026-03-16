@@ -4,6 +4,8 @@ namespace com.quri.operations.profiles
 
 use com.quri.errors#InternalError
 use com.quri.models.profiles#EmailAddress
+use com.quri.models.profiles#FirstName
+use com.quri.models.profiles#LastName
 use com.quri.models.profiles#PhoneNumber
 use com.quri.models.profiles#Profile
 
@@ -16,15 +18,16 @@ operation CreateProfile {
     ]
 }
 
+@input
 structure CreateProfileInput {
     @required
     username: String
 
     @required
-    firstName: String
+    firstName: FirstName
 
     @required
-    lastName: String
+    lastName: LastName
 
     @required
     email: EmailAddress
@@ -32,6 +35,7 @@ structure CreateProfileInput {
     phoneNumber: PhoneNumber
 }
 
+@output
 structure CreateProfileOutput {
     profile: Profile
 }
