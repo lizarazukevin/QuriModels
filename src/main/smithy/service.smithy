@@ -14,7 +14,7 @@ use com.quri.operations.profiles#ListProfiles
 
 @restJson1
 service Quri {
-    version: "2024-01-01"
+    version: "1.0"
     operations: [
         CreateBill
         CreateProfile

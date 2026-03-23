@@ -2,8 +2,12 @@ $version: "2"
 
 namespace com.quri.operations.profiles
 
+use com.quri.models.mixins#Paginated
 use com.quri.models.profiles#Profile
 
+/// Returns a paginated list of all profiles.
+/// Use `nextToken` from the response to fetch the next page.
+/// Omit `maxResults` to use the server default page size.
 @readonly
 @paginated(inputToken: "nextToken", outputToken: "nextToken", pageSize: "maxResults", items: "profiles")
 @http(method: "GET", uri: "/profiles")
@@ -13,13 +17,7 @@ operation ListProfiles {
 }
 
 @input
-structure ListProfilesInput {
-    @httpQuery("maxResults")
-    maxResults: Integer
-
-    @httpQuery("nextToken")
-    nextToken: String
-}
+structure ListProfilesInput with [Paginated] {}
 
 @output
 structure ListProfilesOutput {
@@ -29,6 +27,7 @@ structure ListProfilesOutput {
     profiles: ProfileList
 }
 
+/// Ordered list of profiles returned in a single paginated response.
 list ProfileList {
     member: Profile
 }

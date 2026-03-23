@@ -3,8 +3,11 @@ $version: "2"
 namespace com.quri.operations.profiles
 
 use com.quri.errors#ResourceNotFoundException
-use com.quri.models.profiles#ProfileMongoId
+use com.quri.models.mixins#MongoId
 
+/// Deletes a profile by id. Safe to retry — duplicate deletes return the same response.
+/// Returns the deleted id as confirmation, allowing clients to reconcile local state
+/// without a follow-up fetch.
 @idempotent
 @http(method: "DELETE", uri: "/profiles/{profileId}")
 operation DeleteProfile {
@@ -19,10 +22,11 @@ operation DeleteProfile {
 structure DeleteProfileInput {
     @required
     @httpLabel
-    profileId: ProfileMongoId
+    profileId: MongoId
 }
 
 @output
 structure DeleteProfileOutput {
-    profileId: ProfileMongoId
+    @required
+    profileId: MongoId
 }
