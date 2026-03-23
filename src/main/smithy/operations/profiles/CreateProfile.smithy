@@ -8,7 +8,10 @@ use com.quri.models.profiles#FirstName
 use com.quri.models.profiles#LastName
 use com.quri.models.profiles#PhoneNumber
 use com.quri.models.profiles#Profile
+use com.quri.models.profiles#Username
 
+/// Creates a new user profile.
+/// `username` should be validated for uniqueness at the service layer before persist.
 @http(method: "POST", uri: "/profiles")
 operation CreateProfile {
     input: CreateProfileInput
@@ -21,7 +24,7 @@ operation CreateProfile {
 @input
 structure CreateProfileInput {
     @required
-    username: String
+    username: Username
 
     @required
     firstName: FirstName
@@ -37,5 +40,6 @@ structure CreateProfileInput {
 
 @output
 structure CreateProfileOutput {
+    @required
     profile: Profile
 }
