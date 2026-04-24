@@ -3,6 +3,8 @@ $version: "2"
 namespace com.quri
 
 use aws.protocols#restJson1
+use com.quri.models.errors#InternalFailureException
+use com.quri.models.errors#ValidationException
 use com.quri.operations.bills#CreateBill
 use com.quri.operations.bills#DeleteBill
 use com.quri.operations.bills#GetBill
@@ -24,5 +26,9 @@ service Quri {
         GetProfile
         ListBills
         ListProfiles
+    ]
+    errors: [
+        ValidationException
+        InternalFailureException
     ]
 }
