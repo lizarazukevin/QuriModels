@@ -1,14 +1,39 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Version Catalog
+# Centralizes all dependency versions for the Quri Models package.
+#
+# Rules:
+#   - Don't specify a version when a BOM manages it.
+#   - Kotlin stdlib is inherited from the Kotlin plugin version.
+#   - Group related versions together with a comment header.
+# ─────────────────────────────────────────────────────────────────────────────
+
 [versions]
-coroutines-core-version = "1.10.2"
-smithy-java-version = "0.0.3"
-smithy-kotlin-version = "1.6.4"
-smithy-version = "1.64.0"
+
+# ── Build Plugins ─────────────────────────────────────────────────────────────
+kotlin         = "2.2.20"
+smithy-gradle  = "1.4.0"
+
+# ── Smithy ────────────────────────────────────────────────────────────────────
+# smithy-java: client codegen — intentionally pinned at 0.0.3.
+# No stable release exists for java-client-codegen beyond this version.
+# Track: https://github.com/smithy-lang/smithy-java/releases
+smithy-java    = "0.0.3"
+
+smithy-core    = "1.69.0"
+
+[plugins]
+kotlin-jvm  = { id = "org.jetbrains.kotlin.jvm",                  version.ref = "kotlin"       }
+smithy-base = { id = "software.amazon.smithy.gradle.smithy-base", version.ref = "smithy-gradle" }
 
 [libraries]
-smithy-java-client-codegen = { module = "software.amazon.smithy.java:client-codegen", version.ref = "smithy-java-version" }
-smithy-java-client-core = { module = "software.amazon.smithy.java:client-core", version.ref = "smithy-java-version" }
-smithy-java-codegen-core = { module = "software.amazon.smithy.java:codegen-core", version.ref = "smithy-java-version" }
 
-smithy-smithy-linters = { module = "software.amazon.smithy:smithy-linters", version.ref = "smithy-version" }
-smithy-smithy-model = { module = "software.amazon.smithy:smithy-model", version.ref = "smithy-version" }
-smithy-smithy-openapi = { module = "software.amazon.smithy:smithy-openapi", version.ref = "smithy-version"}
+# ── Smithy Java (client codegen) ──────────────────────────────────────────────
+smithy-java-codegen-core  = { module = "software.amazon.smithy.java:codegen-core",  version.ref = "smithy-java" }
+smithy-java-client-core   = { module = "software.amazon.smithy.java:client-core",   version.ref = "smithy-java" }
+smithy-java-client-codegen = { module = "software.amazon.smithy.java:client-codegen", version.ref = "smithy-java" }
+
+# ── Smithy Core (model, validation, export) ───────────────────────────────────
+smithy-model   = { module = "software.amazon.smithy:smithy-model",   version.ref = "smithy-core" }
+smithy-linters = { module = "software.amazon.smithy:smithy-linters", version.ref = "smithy-core" }
+smithy-openapi = { module = "software.amazon.smithy:smithy-openapi", version.ref = "smithy-core" }
