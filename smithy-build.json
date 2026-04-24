@@ -5,9 +5,9 @@
     "src/main/smithy"
   ],
   "plugins": {
-    "java-server-codegen": {
+    "java-client-codegen": {
       "service": "com.quri#Quri",
-      "namespace": "com.quri.server",
+      "namespace": "com.quri.client",
       "headerFile": "license.txt"
     },
     "openapi": {

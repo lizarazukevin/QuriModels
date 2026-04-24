@@ -2,7 +2,6 @@ $version: "2"
 
 namespace com.quri.operations.profiles
 
-use com.quri.errors#InternalError
 use com.quri.models.profiles#EmailAddress
 use com.quri.models.profiles#FirstName
 use com.quri.models.profiles#LastName
@@ -16,9 +15,6 @@ use com.quri.models.profiles#Username
 operation CreateProfile {
     input: CreateProfileInput
     output: CreateProfileOutput
-    errors: [
-        InternalError
-    ]
 }
 
 @input

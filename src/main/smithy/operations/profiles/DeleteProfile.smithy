@@ -2,7 +2,7 @@ $version: "2"
 
 namespace com.quri.operations.profiles
 
-use com.quri.errors#ResourceNotFoundException
+use com.quri.models.errors#ResourceNotFoundException
 use com.quri.models.mixins#MongoId
 
 /// Deletes a profile by id. Safe to retry — duplicate deletes return the same response.

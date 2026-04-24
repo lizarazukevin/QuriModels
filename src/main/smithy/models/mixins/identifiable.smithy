@@ -2,7 +2,7 @@ $version: "2"
 
 namespace com.quri.models.mixins
 
-/// Base identity mixin for MongoDB-backed models.
+/// Base identity mixin for MongoDB-backed documents.
 /// Composes a validated ObjectId string as the primary key.
 @mixin
 structure Identifiable {

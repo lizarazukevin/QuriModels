@@ -21,10 +21,13 @@ repositories {
 }
 
 dependencies {
-    smithyBuild(libs.smithy.java.server.codegen)
+    // Codegen
+    implementation(libs.smithy.java.codegen.core)
 
-    implementation(libs.smithy.java.plugins)
-    implementation(libs.smithy.java.server.core)
+    // Client
+    implementation(libs.smithy.java.client.core)
+    smithyBuild(libs.smithy.java.client.codegen)
+
     implementation(libs.smithy.smithy.linters)
     implementation(libs.smithy.smithy.model)
     implementation(libs.smithy.smithy.openapi)
@@ -39,6 +42,6 @@ tasks.named("compileJava") {
 }
 
 afterEvaluate {
-    val serverPath = smithy.getPluginProjectionPath(smithy.sourceProjection.get(), "java-server-codegen")
-    sourceSets.main.get().java.srcDir(serverPath)
+    val clientPath = smithy.getPluginProjectionPath(smithy.sourceProjection.get(), "java-client-codegen")
+    sourceSets.main.get().java.srcDir(clientPath)
 }

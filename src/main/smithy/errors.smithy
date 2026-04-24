@@ -1,30 +1,27 @@
 $version: "2"
 
-namespace com.quri.errors
+namespace com.quri.models.errors
+
+/// The request was malformed or failed validation.
+@httpError(400)
+@error("client")
+structure ValidationException {
+    @required
+    message: String
+}
 
 /// The requested resource could not be found.
-/// Clients should not retry without modifying the request.
-@error("client")
 @httpError(404)
+@error("client")
 structure ResourceNotFoundException {
     @required
     message: String
 }
 
-/// The request was malformed or failed validation.
-/// Clients should not retry without modifying the request.
-@error("client")
-@httpError(400)
-structure ValidationError {
-    @required
-    message: String
-}
-
 /// An unexpected error occurred on the server.
-/// Clients may retry with exponential backoff.
-@error("server")
 @httpError(500)
-structure InternalError {
+@error("server")
+structure InternalFailureException {
     @required
     message: String
 }
