@@ -10,7 +10,6 @@ use com.quri.models.profiles#Profile
 use com.quri.models.profiles#Username
 
 /// Creates a new user profile.
-/// `username` should be validated for uniqueness at the service layer before persist.
 @http(method: "POST", uri: "/profiles")
 operation CreateProfile {
     input: CreateProfileInput

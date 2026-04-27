@@ -6,8 +6,6 @@ use com.quri.models.bills#Bill
 use com.quri.models.money#MonetaryAmount
 
 /// Creates a new bill record.
-/// `balance` defaults to `total` at creation if not explicitly provided —
-/// enforce this invariant at the service layer, not here.
 @http(method: "POST", uri: "/bills")
 operation CreateBill {
     input: CreateBillInput

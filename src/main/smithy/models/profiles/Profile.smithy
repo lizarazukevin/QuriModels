@@ -4,12 +4,9 @@ namespace com.quri.models.profiles
 
 use com.quri.models.mixins#Auditable
 use com.quri.models.mixins#Identifiable
+use com.quri.models.mixins#Owned
 
-/// A user profile with identity and contact information.
-///
-/// TODO: Extend with demographic inputs (gender, race, ethnicity, DOB, location),
-/// likely as a separate `Demographics` structure composed in here or linked by id.
-structure Profile with [Identifiable, Auditable] {
+structure Profile with [Identifiable, Auditable, Owned] {
     @required
     username: Username
 
