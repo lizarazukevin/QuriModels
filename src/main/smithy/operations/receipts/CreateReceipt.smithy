@@ -37,6 +37,8 @@ structure CreateReceiptInput {
     @range(min: 0, max: 1)
     tip: BigDecimal
 
+    totalSavings: MonetaryAmount
+
     fees: FeeList
 
     subtotal: MonetaryAmount
