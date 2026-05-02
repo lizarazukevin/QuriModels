@@ -16,6 +16,7 @@ use com.quri.models.mixins#Owned
 /// - `paymentMethod`: method for payment recorded on receipt
 /// - `tax`: decimal rate for tax on transaction (e.g. sales)
 /// - `tip`: decimal rate for tip amount
+/// - `totalSavings`: aggregated savings found at bottom of receipt
 /// - `fees`: list of additional fees (e.g. service, delivery, credit)
 /// - `subtotal`: the pre-tax, pre-fee sum of all items
 /// - `address`: location where transaction occurred
@@ -42,6 +43,8 @@ structure Receipt with [Auditable, Owned] {
 
     @range(min: 0, max: 1)
     tip: BigDecimal
+
+    totalSavings: MonetaryAmount
 
     fees: FeeList
 

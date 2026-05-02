@@ -5,6 +5,7 @@ namespace com.quri.operations.bills
 use com.quri.models.bills#Bill
 use com.quri.models.bills#BillStatus
 
+/// Creates a new bill record.
 @http(method: "POST", uri: "/bills")
 operation CreateBill {
     input: CreateBillInput
