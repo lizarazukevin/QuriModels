@@ -2,12 +2,12 @@ $version: "2"
 
 namespace com.quri.operations.profiles
 
-use com.quri.models.profiles#EmailAddress
-use com.quri.models.profiles#FirstName
-use com.quri.models.profiles#LastName
-use com.quri.models.profiles#PhoneNumber
-use com.quri.models.profiles#Profile
-use com.quri.models.profiles#Username
+use com.quri.models.users#EmailAddress
+use com.quri.models.users#FirstName
+use com.quri.models.users#LastName
+use com.quri.models.users#PhoneNumber
+use com.quri.models.users#Profile
+use com.quri.models.users#Username
 
 /// Creates a new user profile.
 @http(method: "POST", uri: "/profiles")

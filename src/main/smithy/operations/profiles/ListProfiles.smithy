@@ -3,7 +3,7 @@ $version: "2"
 namespace com.quri.operations.profiles
 
 use com.quri.models.mixins#Paginated
-use com.quri.models.profiles#Profile
+use com.quri.models.users#Profile
 
 /// Returns a paginated list of all profiles.
 /// Use `nextToken` from the response to fetch the next page.

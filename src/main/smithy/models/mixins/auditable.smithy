@@ -2,10 +2,12 @@ $version: "2"
 
 namespace com.quri.models.mixins
 
-/// Lifecycle timestamps for persisted models.
-/// Both fields are optional to accommodate records created before auditing was enforced.
+/// Audit trail for persisted models.
 @mixin
 structure Auditable {
-    createdAt: Timestamp
+    @required
     updatedAt: Timestamp
+
+    @required
+    updatedBy: UserId
 }

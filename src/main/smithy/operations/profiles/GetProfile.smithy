@@ -3,8 +3,8 @@ $version: "2"
 namespace com.quri.operations.profiles
 
 use com.quri.models.errors#ResourceNotFoundException
-use com.quri.models.mixins#MongoId
-use com.quri.models.profiles#Profile
+use com.quri.models.users#Profile
+use com.quri.models.users#ProfileId
 
 /// Fetches a single profile by id.
 @readonly
@@ -21,7 +21,7 @@ operation GetProfile {
 structure GetProfileInput {
     @required
     @httpLabel
-    profileId: MongoId
+    profileId: ProfileId
 }
 
 @output

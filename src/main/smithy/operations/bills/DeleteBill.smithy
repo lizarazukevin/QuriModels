@@ -2,8 +2,8 @@ $version: "2"
 
 namespace com.quri.operations.bills
 
+use com.quri.models.bills#BillId
 use com.quri.models.errors#ResourceNotFoundException
-use com.quri.models.mixins#MongoId
 
 /// Deletes a bill by id. Safe to retry — duplicate deletes return the same response.
 /// Returns the deleted id as confirmation, allowing clients to reconcile local state
@@ -22,11 +22,11 @@ operation DeleteBill {
 structure DeleteBillInput {
     @required
     @httpLabel
-    billId: MongoId
+    billId: BillId
 }
 
 @output
 structure DeleteBillOutput {
     @required
-    billId: MongoId
+    billId: BillId
 }
