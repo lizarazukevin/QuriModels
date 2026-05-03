@@ -1,6 +1,6 @@
 $version: "2"
 
-namespace com.quri.models.money
+namespace com.quri.models.common
 
 /// Represents a monetary value with explicit currency denomination.
 /// Always store and transmit both fields together — an amount without

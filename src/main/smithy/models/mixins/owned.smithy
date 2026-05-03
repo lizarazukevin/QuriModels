@@ -2,15 +2,16 @@ $version: "2"
 
 namespace com.quri.models.mixins
 
-/// User ID mixin for requests originating from Clerk JWT.
+/// User ID mixin for requests originating from a JWT.
 @mixin
 structure Owned {
     @required
-    ownerId: ClerkId
+    createdAt: Timestamp
+
+    @required
+    createdBy: UserId
 }
 
-/// Clerk user ID from registered JWT subject claim.
-/// Format: "user_" followed by alphanumeric characters.
-/// Example: "user_2abc123xyz"
-@pattern("^user_[a-zA-Z0-9]+$")
-string ClerkId
+/// `sub` claim on JWT.
+/// Clerk format: "user_" followed by alphanumeric characters.
+string UserId

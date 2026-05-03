@@ -13,6 +13,10 @@ use com.quri.operations.profiles#CreateProfile
 use com.quri.operations.profiles#DeleteProfile
 use com.quri.operations.profiles#GetProfile
 use com.quri.operations.profiles#ListProfiles
+use com.quri.operations.receipts#CreateReceipt
+use com.quri.operations.receipts#DeleteReceipt
+use com.quri.operations.receipts#GetReceipt
+use com.quri.operations.receipts#ListReceipts
 
 @restJson1
 service Quri {
@@ -20,12 +24,16 @@ service Quri {
     operations: [
         CreateBill
         CreateProfile
+        CreateReceipt
         DeleteBill
         DeleteProfile
+        DeleteReceipt
         GetBill
         GetProfile
+        GetReceipt
         ListBills
         ListProfiles
+        ListReceipts
     ]
     errors: [
         ValidationException

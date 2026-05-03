@@ -21,13 +21,12 @@ structure ListBillsInput with [Paginated] {}
 
 @output
 structure ListBillsOutput {
-    nextToken: String
-
     @required
     bills: BillList
+
+    nextToken: String
 }
 
-/// Ordered list of bills returned in a single paginated response.
 list BillList {
     member: Bill
 }

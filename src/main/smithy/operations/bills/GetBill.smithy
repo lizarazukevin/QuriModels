@@ -3,8 +3,8 @@ $version: "2"
 namespace com.quri.operations.bills
 
 use com.quri.models.bills#Bill
+use com.quri.models.bills#BillId
 use com.quri.models.errors#ResourceNotFoundException
-use com.quri.models.mixins#MongoId
 
 /// Fetches a single bill by id.
 @readonly
@@ -21,7 +21,7 @@ operation GetBill {
 structure GetBillInput {
     @required
     @httpLabel
-    billId: MongoId
+    billId: BillId
 }
 
 @output
