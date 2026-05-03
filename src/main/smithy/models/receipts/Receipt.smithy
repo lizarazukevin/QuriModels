@@ -14,11 +14,11 @@ use com.quri.models.mixins#Owned
 /// - `items`: list of items that need assigning
 /// - `occurredAt`: when the transaction happened, not when the bill was created
 /// - `paymentMethod`: method for payment recorded on receipt
+/// - `subtotal`: the pre-tax, pre-fee sum of all items
 /// - `tax`: decimal rate for tax on transaction (e.g. sales)
 /// - `tip`: decimal rate for tip amount
 /// - `totalSavings`: aggregated savings found at bottom of receipt
 /// - `fees`: list of additional fees (e.g. service, delivery, credit)
-/// - `subtotal`: the pre-tax, pre-fee sum of all items
 /// - `address`: location where transaction occurred
 /// - `photoId`: optional — photo asset ref stored externally (e.g. S3 object key)
 /// - `urls`: raw urls parsed from input method
@@ -38,6 +38,9 @@ structure Receipt with [Auditable, Owned] {
     @required
     paymentMethod: PaymentMethod
 
+    @required
+    subtotal: MonetaryAmount
+
     @range(min: 0, max: 1)
     tax: BigDecimal
 
@@ -47,8 +50,6 @@ structure Receipt with [Auditable, Owned] {
     totalSavings: MonetaryAmount
 
     fees: FeeList
-
-    subtotal: MonetaryAmount
 
     address: Address
 

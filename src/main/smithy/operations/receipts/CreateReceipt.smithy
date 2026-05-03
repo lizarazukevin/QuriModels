@@ -31,6 +31,9 @@ structure CreateReceiptInput {
     @required
     paymentMethod: PaymentMethod
 
+    @required
+    subtotal: MonetaryAmount
+
     @range(min: 0, max: 1)
     tax: BigDecimal
 
@@ -40,8 +43,6 @@ structure CreateReceiptInput {
     totalSavings: MonetaryAmount
 
     fees: FeeList
-
-    subtotal: MonetaryAmount
 
     address: Address
 
