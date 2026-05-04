@@ -21,10 +21,10 @@ structure ListProfilesInput with [Paginated] {}
 
 @output
 structure ListProfilesOutput {
-    nextToken: String
-
     @required
     profiles: ProfileList
+
+    nextToken: String
 }
 
 /// Ordered list of profiles returned in a single paginated response.
