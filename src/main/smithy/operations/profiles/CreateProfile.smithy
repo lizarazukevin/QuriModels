@@ -5,6 +5,7 @@ namespace com.quri.operations.profiles
 use com.quri.models.users#EmailAddress
 use com.quri.models.users#FirstName
 use com.quri.models.users#LastName
+use com.quri.models.users#MiddleName
 use com.quri.models.users#PhoneNumber
 use com.quri.models.users#Profile
 use com.quri.models.users#Username
@@ -29,6 +30,8 @@ structure CreateProfileInput {
 
     @required
     email: EmailAddress
+
+    middleName: MiddleName
 
     phoneNumber: PhoneNumber
 }
