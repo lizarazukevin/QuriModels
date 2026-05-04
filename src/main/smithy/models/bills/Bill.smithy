@@ -5,7 +5,7 @@ namespace com.quri.models.bills
 use com.quri.models.common#MonetaryAmount
 use com.quri.models.mixins#Auditable
 use com.quri.models.mixins#Owned
-use com.quri.models.receipts#ReceiptId
+use com.quri.models.receipts#ReceiptIdList
 
 /// A bill representing a transaction summary.
 ///
@@ -33,10 +33,6 @@ structure Bill with [Auditable, Owned] {
     balance: MonetaryAmount
 
     receipts: ReceiptIdList
-}
-
-list ReceiptIdList {
-    member: ReceiptId
 }
 
 /// Lifecycle of a bill defined by statuses.

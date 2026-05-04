@@ -66,6 +66,10 @@ enum PaymentMethod {
     OTHER
 }
 
+list ReceiptIdList {
+    member: ReceiptId
+}
+
 list StringList {
     member: String
 }

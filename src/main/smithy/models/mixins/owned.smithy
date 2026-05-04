@@ -12,6 +12,10 @@ structure Owned {
     createdBy: UserId
 }
 
+list UserIdList {
+    member: UserId
+}
+
 /// `sub` claim on JWT.
 /// Clerk format: "user_" followed by alphanumeric characters.
 string UserId

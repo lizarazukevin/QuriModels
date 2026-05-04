@@ -4,6 +4,7 @@ namespace com.quri.models.users
 
 use com.quri.models.mixins#Auditable
 use com.quri.models.mixins#Owned
+use com.quri.models.mixins#UserIdList
 
 /// A profile object owned by signed in users.
 ///
@@ -11,7 +12,11 @@ use com.quri.models.mixins#Owned
 /// - `firstName`: user's first name (mutable)
 /// - `lastName`: user's last name (mutable)
 /// - `email`: registered email (one per account)
-/// - `phoneNumber`: registered phone number (many across account)
+/// - `following`: list of all users a profile is following
+/// - `followers`: list of all users following this profile
+/// - `middleName`: optional, user's middle name
+/// - `phoneNumber`: registered phone number (owning many account)
+/// - `bio`: short summary viewable on a profile
 structure Profile with [Auditable, Owned] {
     @required
     id: ProfileId
@@ -28,27 +33,61 @@ structure Profile with [Auditable, Owned] {
     @required
     email: EmailAddress
 
+    following: UserIdList
+
+    followers: UserIdList
+
+    middleName: MiddleName
+
     phoneNumber: PhoneNumber
+
+    bio: Bio
+
+    /// Optional demographic fields
+    gender: Gender
+
+    dateOfBirth: DateOfBirth
+
+    location: ProfileLocation
 }
 
-/// ISO 8601 / RFC 5322 email address.
 @sensitive
-@pattern("^[\\w.+-]+@[\\w-]+\\.[\\w.]+$")
+enum Gender {
+    MALE
+    FEMALE
+    NON_BINARY
+    PREFER_NOT_TO_SAY
+    OTHER
+}
+
+/// ISO 8601 / RFC 5322 email address
+@sensitive
 string EmailAddress
 
-/// E.164 or local-format phone number. Unvalidated beyond type — normalization
-/// handled at the service layer.
+/// E.164 or local-format phone number
 @sensitive
 string PhoneNumber
 
 @sensitive
+@length(max: 50)
 string FirstName
 
 @sensitive
+@length(max: 50)
+string MiddleName
+
+@sensitive
+@length(max: 50)
 string LastName
 
-@length(min: 3, max: 32)
-@pattern("^[a-zA-Z0-9_.-]+$")
+/// ISO 8601 date string e.g. 1995-04-15
+@sensitive
+timestamp DateOfBirth
+
+@length(min: 3, max: 30)
 string Username
+
+@length(max: 150)
+string Bio
 
 string ProfileId
