@@ -3,6 +3,8 @@ $version: "2"
 namespace com.quri.operations.bills
 
 use com.quri.models.bills#Bill
+use com.quri.models.bills#BillDescription
+use com.quri.models.bills#BillName
 use com.quri.models.bills#BillStatus
 
 /// Creates a new bill record.
@@ -15,13 +17,13 @@ operation CreateBill {
 @input
 structure CreateBillInput {
     @required
-    name: String
+    name: BillName
 
     status: BillStatus
 
     hidden: Boolean
 
-    description: String
+    description: BillDescription
 }
 
 @output

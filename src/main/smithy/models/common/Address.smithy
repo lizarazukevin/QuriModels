@@ -5,7 +5,8 @@ namespace com.quri.models.common
 /// A civic address. All fields except streetAddress are required
 /// to support querying, deduplication, and cost analysis grouping.
 ///
-/// - `rawInput`: preserved from OCR output before normalization
+/// - `unit`: apartment, suite, residential unit
+/// - `rawInput`: raw unparsed entry preserved from OCR before normalization
 /// - `formatted`: the canonical normalized form, written server-side
 structure Address {
     @required
@@ -18,20 +19,22 @@ structure Address {
     state: String
 
     @required
-    postalCode: String
+    postalCode: PostalCode
 
     @required
     country: CountryCode
 
-    /// Apartment, suite, residential unit
     unit: String
 
-    /// Raw unparsed string from OCR input, preserved for debugging and reprocessing
     rawInput: String
 
-    /// Server-normalized canonical address string
     formatted: String
 }
+
+/// Valid US zip code
+/// Examples: "20001", "20001-1234"
+@pattern("^[0-9]{5}(-[0-9]{4})?$")
+string PostalCode
 
 /// ISO 3166 alpha-2 country code. Exactly 2 uppercase letters.
 /// Examples: "US", "GB", "FR", "JP"

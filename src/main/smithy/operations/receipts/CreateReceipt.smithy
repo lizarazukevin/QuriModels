@@ -8,7 +8,8 @@ use com.quri.models.receipts#FeeList
 use com.quri.models.receipts#ItemList
 use com.quri.models.receipts#PaymentMethod
 use com.quri.models.receipts#Receipt
-use com.quri.models.receipts#StringList
+use com.quri.models.receipts#UrlList
+use com.quri.models.receipts#VendorName
 
 /// Creates a new receipt record within a bill.
 @http(method: "POST", uri: "/receipts")
@@ -20,7 +21,7 @@ operation CreateReceipt {
 @input
 structure CreateReceiptInput {
     @required
-    vendorName: String
+    vendorName: VendorName
 
     @required
     items: ItemList
@@ -46,9 +47,10 @@ structure CreateReceiptInput {
 
     address: Address
 
+    /// Update type when we settle on the String pattern
     photoId: String
 
-    urls: StringList
+    urls: UrlList
 }
 
 @output

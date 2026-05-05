@@ -2,15 +2,19 @@ $version: "2"
 
 namespace com.quri.models.receipts
 
+use com.quri.models.common#MonetaryAmount
+
 /// Fee charged depending on service and payment provided.
 ///
 /// - `name`: identifier for fee type (e.g. service, gratuity)
-/// - `rate`: percentage of the subtotal owed (e.g. 0.5 for 50%)
+/// - `value`: flat monetary reduction (e.g. $1 off)
+/// - `rate`: percentage reduction (e.g. 20% off)
 structure Fee {
     @required
-    name: String
+    name: FeeName
 
-    @required
+    value: MonetaryAmount
+
     @range(min: 0, max: 1)
     rate: BigDecimal
 }
@@ -18,3 +22,6 @@ structure Fee {
 list FeeList {
     member: Fee
 }
+
+@range(min: 3, max: 50)
+string FeeName

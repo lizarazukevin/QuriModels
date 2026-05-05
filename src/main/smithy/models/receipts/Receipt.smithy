@@ -27,7 +27,7 @@ structure Receipt with [Auditable, Owned] {
     id: ReceiptId
 
     @required
-    vendorName: String
+    vendorName: VendorName
 
     @required
     items: ItemList
@@ -56,7 +56,7 @@ structure Receipt with [Auditable, Owned] {
     /// Absent if no photo was captured
     photoId: String
 
-    urls: StringList
+    urls: UrlList
 }
 
 enum PaymentMethod {
@@ -70,8 +70,15 @@ list ReceiptIdList {
     member: ReceiptId
 }
 
-list StringList {
-    member: String
+list UrlList {
+    member: Url
 }
 
 string ReceiptId
+
+@length(min: 3, max: 150)
+string VendorName
+
+@mediaType("text/uri-list")
+@length(min: 1, max: 2048)
+string Url
