@@ -20,7 +20,7 @@ structure Bill with [Auditable, Owned] {
     id: BillId
 
     @required
-    name: String
+    name: BillName
 
     @required
     status: BillStatus
@@ -28,7 +28,7 @@ structure Bill with [Auditable, Owned] {
     @required
     hidden: Boolean
 
-    description: String
+    description: BillDescription
 
     balance: MonetaryAmount
 
@@ -51,3 +51,9 @@ enum BillStatus {
 }
 
 string BillId
+
+@length(min: 1, max: 32)
+string BillName
+
+@length(max: 150)
+string BillDescription

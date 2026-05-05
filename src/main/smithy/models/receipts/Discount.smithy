@@ -6,16 +6,14 @@ use com.quri.models.common#MonetaryAmount
 
 /// A discount applied to a receipt item in terms of a single unit.
 ///
-/// Exactly one of `amount` or `rate` must be present depending on discount type:
-/// - `saving`: flat monetary reduction (e.g. $1 off)
-/// - `rate`: percentage reduction (e.g. 20% off)
-///
 /// - `type`: classifier for the type of discount received
+/// - `value`: flat monetary reduction (e.g. $1 off)
+/// - `rate`: percentage reduction (e.g. 20% off)
 structure Discount {
     @required
     type: DiscountType
 
-    saving: MonetaryAmount
+    value: MonetaryAmount
 
     @range(min: 0, max: 1)
     rate: BigDecimal

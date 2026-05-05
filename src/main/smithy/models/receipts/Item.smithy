@@ -28,6 +28,7 @@ structure Item {
     discounts: DiscountList
 }
 
+@length(min: 1)
 list ItemList {
     member: Item
 }
