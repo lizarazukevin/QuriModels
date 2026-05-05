@@ -23,5 +23,5 @@ list FeeList {
     member: Fee
 }
 
-@range(min: 3, max: 50)
+@length(min: 3, max: 50)
 string FeeName
