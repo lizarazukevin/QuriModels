@@ -19,8 +19,10 @@ structure CreateBillInput {
     @required
     name: BillName
 
+    @default("DRAFT")
     status: BillStatus
 
+    @default(false)
     hidden: Boolean
 
     description: BillDescription
