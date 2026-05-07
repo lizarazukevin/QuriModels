@@ -13,10 +13,10 @@ use com.quri.models.common#MonetaryAmount
 /// - `discounts`: list of discounts attached to this item (e.g. promo, sale)
 structure Item {
     @required
-    name: String
+    name: ItemName
 
     @required
-    @range(min: 1)
+    @range(min: 1, max: 1000000000)
     units: Integer
 
     @required
@@ -32,3 +32,6 @@ structure Item {
 list ItemList {
     member: Item
 }
+
+@length(min: 3, max: 100)
+string ItemName
