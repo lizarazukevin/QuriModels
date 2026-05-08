@@ -9,6 +9,7 @@ use com.quri.operations.bills#CreateBill
 use com.quri.operations.bills#DeleteBill
 use com.quri.operations.bills#GetBill
 use com.quri.operations.bills#ListBills
+use com.quri.operations.bills#UpdateBill
 use com.quri.operations.profiles#CreateProfile
 use com.quri.operations.profiles#DeleteProfile
 use com.quri.operations.profiles#GetProfile
@@ -34,6 +35,7 @@ service Quri {
         ListBills
         ListProfiles
         ListReceipts
+        UpdateBill
     ]
     errors: [
         ValidationException
