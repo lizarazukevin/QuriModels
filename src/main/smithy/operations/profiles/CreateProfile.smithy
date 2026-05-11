@@ -2,6 +2,7 @@ $version: "2"
 
 namespace com.quri.operations.profiles
 
+use com.quri.models.users#DateOfBirth
 use com.quri.models.users#EmailAddress
 use com.quri.models.users#FirstName
 use com.quri.models.users#LastName
@@ -30,6 +31,9 @@ structure CreateProfileInput {
 
     @required
     email: EmailAddress
+
+    @required
+    dateOfBirth: DateOfBirth
 
     middleName: MiddleName
 

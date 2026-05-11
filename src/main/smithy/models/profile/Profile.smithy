@@ -33,9 +33,8 @@ structure Profile with [Auditable, Owned] {
     @required
     email: EmailAddress
 
-    following: UserIdList
-
-    followers: UserIdList
+    @required
+    dateOfBirth: DateOfBirth
 
     middleName: MiddleName
 
@@ -43,12 +42,14 @@ structure Profile with [Auditable, Owned] {
 
     bio: Bio
 
+    following: UserIdList
+
+    followers: UserIdList
+
     /// Optional demographic fields
     gender: Gender
 
-    dateOfBirth: DateOfBirth
-
-    location: ProfileLocation
+    location: UserLocation
 }
 
 @sensitive

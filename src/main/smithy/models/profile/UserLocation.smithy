@@ -7,7 +7,7 @@ use com.quri.models.common#CountryCode
 /// General location for a user's demographic data.
 ///
 /// Fields are unconstrained here except for country.
-structure ProfileLocation {
+structure UserLocation {
     @required
     city: String
 
