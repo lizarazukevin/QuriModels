@@ -14,6 +14,7 @@ use com.quri.operations.profiles#CreateProfile
 use com.quri.operations.profiles#DeleteProfile
 use com.quri.operations.profiles#GetProfile
 use com.quri.operations.profiles#ListProfiles
+use com.quri.operations.profiles#UpdateProfile
 use com.quri.operations.receipts#CreateReceipt
 use com.quri.operations.receipts#DeleteReceipt
 use com.quri.operations.receipts#GetReceipt
@@ -36,6 +37,7 @@ service Quri {
         ListProfiles
         ListReceipts
         UpdateBill
+        UpdateProfile
     ]
     errors: [
         ValidationException

@@ -11,7 +11,7 @@ use com.quri.models.common#MonetaryAmount
 use com.quri.models.errors#ResourceNotFoundException
 use com.quri.models.receipts#ReceiptIdList
 
-/// Updates an existing bill record with partial fields.
+/// Updates an existing bill record partially.
 @http(method: "PATCH", uri: "/bills")
 operation UpdateBill {
     input: UpdateBillInput
