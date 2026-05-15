@@ -19,6 +19,7 @@ use com.quri.operations.receipts#CreateReceipt
 use com.quri.operations.receipts#DeleteReceipt
 use com.quri.operations.receipts#GetReceipt
 use com.quri.operations.receipts#ListReceipts
+use com.quri.operations.receipts#UpdateReceipt
 
 @restJson1
 service Quri {
@@ -38,6 +39,7 @@ service Quri {
         ListReceipts
         UpdateBill
         UpdateProfile
+        UpdateReceipt
     ]
     errors: [
         ValidationException
