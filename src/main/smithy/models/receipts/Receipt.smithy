@@ -53,7 +53,6 @@ structure Receipt with [Auditable, Owned] {
 
     address: Address
 
-    /// Absent if no photo was captured
     photoId: String
 
     urls: UrlList
