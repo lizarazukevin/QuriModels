@@ -12,7 +12,7 @@ use com.quri.models.errors#ResourceNotFoundException
 use com.quri.models.receipts#ReceiptIdList
 
 /// Updates an existing bill record partially.
-@http(method: "PATCH", uri: "/bills")
+@http(method: "PATCH", uri: "/bills/{billId}")
 operation UpdateBill {
     input: UpdateBillInput
     output: UpdateBillOutput
@@ -24,6 +24,7 @@ operation UpdateBill {
 @input
 structure UpdateBillInput {
     @required
+    @httpLabel
     billId: BillId
 
     name: BillName

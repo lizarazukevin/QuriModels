@@ -17,7 +17,7 @@ use com.quri.models.users#UserLocation
 use com.quri.models.users#Username
 
 /// Updates an existing profile partially.
-@http(method: "PATCH", uri: "/profiles")
+@http(method: "PATCH", uri: "/profiles{profileId}")
 operation UpdateProfile {
     input: UpdateProfileInput
     output: UpdateProfileOutput
@@ -29,6 +29,7 @@ operation UpdateProfile {
 @input
 structure UpdateProfileInput {
     @required
+    @httpLabel
     profileId: ProfileId
 
     username: Username
