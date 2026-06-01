@@ -8,7 +8,7 @@ use com.quri.models.users#ProfileId
 
 /// Fetches a single profile by id.
 @readonly
-@http(method: "GET", uri: "/profiles/{profileId}")
+@http(method: "GET", uri: "/profiles/{id}")
 operation GetProfile {
     input: GetProfileInput
     output: GetProfileOutput
@@ -21,7 +21,7 @@ operation GetProfile {
 structure GetProfileInput {
     @required
     @httpLabel
-    profileId: ProfileId
+    id: ProfileId
 }
 
 @output

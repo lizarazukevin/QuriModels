@@ -9,7 +9,7 @@ use com.quri.models.errors#ResourceNotFoundException
 /// Returns the deleted id as confirmation, allowing clients to reconcile local state
 /// without a follow-up fetch.
 @idempotent
-@http(method: "DELETE", uri: "/bills/{billId}")
+@http(method: "DELETE", uri: "/bills/{id}")
 operation DeleteBill {
     input: DeleteBillInput
     output: DeleteBillOutput
@@ -22,11 +22,11 @@ operation DeleteBill {
 structure DeleteBillInput {
     @required
     @httpLabel
-    billId: BillId
+    id: BillId
 }
 
 @output
 structure DeleteBillOutput {
     @required
-    billId: BillId
+    id: BillId
 }

@@ -9,7 +9,7 @@ use com.quri.models.users#ProfileId
 /// Returns the deleted id as confirmation, allowing clients to reconcile local state
 /// without a follow-up fetch.
 @idempotent
-@http(method: "DELETE", uri: "/profiles/{profileId}")
+@http(method: "DELETE", uri: "/profiles/{id}")
 operation DeleteProfile {
     input: DeleteProfileInput
     output: DeleteProfileOutput
@@ -22,11 +22,11 @@ operation DeleteProfile {
 structure DeleteProfileInput {
     @required
     @httpLabel
-    profileId: ProfileId
+    id: ProfileId
 }
 
 @output
 structure DeleteProfileOutput {
     @required
-    profileId: ProfileId
+    id: ProfileId
 }

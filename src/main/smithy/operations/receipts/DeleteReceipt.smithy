@@ -9,7 +9,7 @@ use com.quri.models.receipts#ReceiptId
 /// Returns the deleted id as confirmation, allowing clients to reconcile local state
 /// without a follow-up fetch.
 @idempotent
-@http(method: "DELETE", uri: "/receipts/{receiptId}")
+@http(method: "DELETE", uri: "/receipts/{id}")
 operation DeleteReceipt {
     input: DeleteReceiptInput
     output: DeleteReceiptOutput
@@ -22,11 +22,11 @@ operation DeleteReceipt {
 structure DeleteReceiptInput {
     @required
     @httpLabel
-    receiptId: ReceiptId
+    id: ReceiptId
 }
 
 @output
 structure DeleteReceiptOutput {
     @required
-    receiptId: ReceiptId
+    id: ReceiptId
 }

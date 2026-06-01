@@ -8,7 +8,7 @@ use com.quri.models.receipts#ReceiptId
 
 /// Fetches a single receipt by id.
 @readonly
-@http(method: "GET", uri: "/receipts/{receiptId}")
+@http(method: "GET", uri: "/receipts/{id}")
 operation GetReceipt {
     input: GetReceiptInput
     output: GetReceiptOutput
@@ -21,7 +21,7 @@ operation GetReceipt {
 structure GetReceiptInput {
     @required
     @httpLabel
-    receiptId: ReceiptId
+    id: ReceiptId
 }
 
 @output

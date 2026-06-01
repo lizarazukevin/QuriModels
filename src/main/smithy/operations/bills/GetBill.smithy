@@ -8,7 +8,7 @@ use com.quri.models.errors#ResourceNotFoundException
 
 /// Fetches a single bill by id.
 @readonly
-@http(method: "GET", uri: "/bills/{billId}")
+@http(method: "GET", uri: "/bills/{id}")
 operation GetBill {
     input: GetBillInput
     output: GetBillOutput
@@ -21,7 +21,7 @@ operation GetBill {
 structure GetBillInput {
     @required
     @httpLabel
-    billId: BillId
+    id: BillId
 }
 
 @output

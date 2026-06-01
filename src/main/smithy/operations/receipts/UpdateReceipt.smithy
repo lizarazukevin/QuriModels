@@ -15,7 +15,7 @@ use com.quri.models.receipts#VendorName
 
 /// Updates an existing receipt fully.
 @idempotent
-@http(method: "PUT", uri: "/receipts/{receiptId}")
+@http(method: "PUT", uri: "/receipts/{id}")
 operation UpdateReceipt {
     input: UpdateReceiptInput
     output: UpdateReceiptOutput
@@ -28,7 +28,7 @@ operation UpdateReceipt {
 structure UpdateReceiptInput {
     @required
     @httpLabel
-    receiptId: ReceiptId
+    id: ReceiptId
 
     vendorName: VendorName
 
