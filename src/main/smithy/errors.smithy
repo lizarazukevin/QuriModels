@@ -6,7 +6,6 @@ namespace com.quri.models.errors
 @httpError(400)
 @error("client")
 structure ValidationException {
-    @required
     message: String
 }
 
@@ -14,7 +13,6 @@ structure ValidationException {
 @httpError(404)
 @error("client")
 structure ResourceNotFoundException {
-    @required
     message: String
 }
 
