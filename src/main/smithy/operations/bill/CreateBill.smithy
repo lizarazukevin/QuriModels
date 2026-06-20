@@ -8,7 +8,7 @@ use com.quri.models.bills#BillName
 use com.quri.models.bills#BillStatus
 
 /// Creates a new bill record.
-@http(method: "POST", uri: "/bills")
+@http(method: "POST", uri: "/bills", code: 201)
 operation CreateBill {
     input: CreateBillInput
     output: CreateBillOutput

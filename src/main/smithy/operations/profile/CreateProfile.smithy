@@ -12,7 +12,7 @@ use com.quri.models.users#Profile
 use com.quri.models.users#Username
 
 /// Creates a new user profile.
-@http(method: "POST", uri: "/profiles")
+@http(method: "POST", uri: "/profiles", code: 201)
 operation CreateProfile {
     input: CreateProfileInput
     output: CreateProfileOutput

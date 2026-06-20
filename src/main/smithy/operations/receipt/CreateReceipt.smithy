@@ -12,7 +12,7 @@ use com.quri.models.receipts#UrlList
 use com.quri.models.receipts#VendorName
 
 /// Creates a new receipt record within a bill.
-@http(method: "POST", uri: "/receipts")
+@http(method: "POST", uri: "/receipts", code: 201)
 operation CreateReceipt {
     input: CreateReceiptInput
     output: CreateReceiptOutput
