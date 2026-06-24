@@ -10,7 +10,7 @@ namespace com.quri.models.common
 /// - `formatted`: the canonical normalized form, written server-side
 structure Address {
     @required
-    street: State
+    street: Street
 
     @required
     city: City
