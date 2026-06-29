@@ -11,7 +11,7 @@
 [versions]
 
 # ── Build Plugins ─────────────────────────────────────────────────────────────
-kotlin         = "2.2.20"
+kotlin         = "2.4.0"
 smithy-gradle  = "1.4.0"
 
 # ── Smithy ────────────────────────────────────────────────────────────────────
@@ -20,7 +20,7 @@ smithy-gradle  = "1.4.0"
 # Track: https://github.com/smithy-lang/smithy-java/releases
 smithy-java    = "0.0.3"
 
-smithy-core    = "1.69.0"
+smithy-core    = "1.71.0"
 
 [plugins]
 kotlin-jvm  = { id = "org.jetbrains.kotlin.jvm",                  version.ref = "kotlin"       }
