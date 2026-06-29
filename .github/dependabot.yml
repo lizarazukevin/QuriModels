@@ -1,7 +1,5 @@
 ---
-# Keeps both GitHub Actions and Gradle dependency versions current without
-# constant PR noise. Mirrors the QuriManagementService dependabot.yml so both
-# repos behave the same way.
+# Keeps GitHub Actions versions (actions/checkout, setup-java, etc.) current
 #
 # github-actions: monthly checks, all updates bundled into one grouped PR.
 #
@@ -10,8 +8,7 @@
 #   - patch/minor bumps (Kotlin, Smithy codegen libs, etc.) are bundled into
 #     a single low-risk PR per cycle.
 #   - major version bumps are deliberately excluded from grouping, so each
-#     lands as its own clearly-labeled PR and can't hide inside a routine
-#     batch of patch bumps.
+#     lands as its own clearly-labeled PR.
 #
 # Neither ecosystem auto-merges anything — PRs only ever propose updates;
 # merging is still a manual decision.
