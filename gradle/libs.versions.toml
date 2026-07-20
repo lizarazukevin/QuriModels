@@ -20,7 +20,7 @@ smithy-gradle  = "1.4.0"
 # Track: https://github.com/smithy-lang/smithy-java/releases
 smithy-java    = "0.0.3"
 
-smithy-core    = "1.72.0"
+smithy-core    = "1.72.1"
 
 [plugins]
 kotlin-jvm  = { id = "org.jetbrains.kotlin.jvm",                  version.ref = "kotlin"       }
