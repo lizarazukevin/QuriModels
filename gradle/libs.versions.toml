@@ -29,11 +29,12 @@ smithy-base = { id = "software.amazon.smithy.gradle.smithy-base", version.ref = 
 [libraries]
 
 # ── Smithy Java (client codegen) ──────────────────────────────────────────────
-smithy-java-codegen-core  = { module = "software.amazon.smithy.java:codegen-core",  version.ref = "smithy-java" }
-smithy-java-client-core   = { module = "software.amazon.smithy.java:client-core",   version.ref = "smithy-java" }
+smithy-java-codegen-core   = { module = "software.amazon.smithy.java:codegen-core",  version.ref = "smithy-java" }
+smithy-java-client-core    = { module = "software.amazon.smithy.java:client-core",   version.ref = "smithy-java" }
 smithy-java-client-codegen = { module = "software.amazon.smithy.java:client-codegen", version.ref = "smithy-java" }
 
 # ── Smithy Core (model, validation, export) ───────────────────────────────────
-smithy-model   = { module = "software.amazon.smithy:smithy-model",   version.ref = "smithy-core" }
-smithy-linters = { module = "software.amazon.smithy:smithy-linters", version.ref = "smithy-core" }
-smithy-openapi = { module = "software.amazon.smithy:smithy-openapi", version.ref = "smithy-core" }
+smithy-model        = { module = "software.amazon.smithy:smithy-model",   version.ref = "smithy-core" }
+smithy-linters      = { module = "software.amazon.smithy:smithy-linters", version.ref = "smithy-core" }
+smithy-openapi      = { module = "software.amazon.smithy:smithy-openapi", version.ref = "smithy-core" }
+smithy-aws-traits   = { module = "software.amazon.smithy:smithy-aws-traits", version.ref = "smithy-core" }
